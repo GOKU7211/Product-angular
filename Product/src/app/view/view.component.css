@@ -1,0 +1,7 @@
+.text-centre{
+    text-align: center;
+    color: cornflowerblue;
+}
+.text-justify-centre{
+    text-justify: distribute-all-lines;
+}

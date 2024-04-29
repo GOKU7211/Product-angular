@@ -1,0 +1,35 @@
+<div class="container col-md-12">
+    <div class="form-group">
+        <div class="form-control">
+            <form [formGroup]="productForm" (ngSubmit)="onSubmit(productForm.value)">
+                <div class="mb-3">
+                    <label for="Pname" class="form-label">Name of the Product:</label>
+                    <input type="text" class="form-control" formControlName="name" id="Pname">
+                </div>
+                <div class="mb-3">
+                    <label for="desc" class="form-label">Description:</label>
+                    <textarea  class="form-control" formControlName="desc" id="desc"></textarea>
+                    
+                </div>
+                <div>
+                    <label class="form-radio-label" for="price">Price:</label>
+                    <input type="number" class="form-control" formControlName="price" id="price">
+                </div>
+                <br>
+                <ng-container *ngFor="let cl of color; let i = index">
+                    <div>
+                        <label class="form-radio-label" [for]="'color_' + i">{{cl}}:</label>
+                        <input type="checkbox"  value="{{cl}}" (change)="changeColor($event)" [id]="'color_' + i"
+                        [checked]="currentProduct.colore && currentProduct.colore.includes(cl)">
+                        
+                    </div>
+                    </ng-container><br>
+                <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+

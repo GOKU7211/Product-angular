@@ -1,0 +1,17 @@
+<div class="container btnfirst" style="align-items: start;">
+    <button class="btn btn-primary" routerLink="/create" routerLinkActive type="reset">Create</button>
+</div>
+<div class="row">
+<div class="col" *ngFor="let pro of productData">
+<div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h4 class="card-title text-centre">{{pro.name}}</h4>
+        <h5><p class="card-text">Rs.{{pro.price}}</p></h5>
+        <a  type="submit" class="btn btn-primary" (click)="onViewClick(pro.id)">View</a>
+        <button type="reset" class="btn btn-danger" (click)="onDelete(pro.id)" style="margin-left: 10px;">Delete</button>
+        <a  type="View" class="btn btn-secondary" style="margin-left: 10px;" (click)="onEditclick(pro.id)">Edit</a>
+      </div>
+    </div>
+  </div>
+</div>
+  <router-outlet></router-outlet>
